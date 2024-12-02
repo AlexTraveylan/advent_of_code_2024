@@ -33,11 +33,7 @@ def code(s: str):
     transposed_sorted = np.sort(lines.T, axis=1).tolist()
     scores_dict = {k: v * k for k, v in Counter(transposed_sorted[1]).items()}
 
-    similarity_counter = 0
-    for number in transposed_sorted[0]:
-        similarity_counter += scores_dict.get(number, 0)
-
-    return similarity_counter
+    return sum(scores_dict.get(number, 0) for number in transposed_sorted[0])
 
 
 if __name__ == "__main__":
