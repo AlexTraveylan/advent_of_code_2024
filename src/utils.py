@@ -4,12 +4,14 @@ Advent of code 2024 template file
 Author: Alex Traveylan
 Date: 2024-12-01
 """
-from collections.abc import Callable
+
 import os
 import time
+from collections.abc import Callable
+from functools import partial
+
 import requests
 from dotenv import load_dotenv
-from functools import partial
 
 load_dotenv()
 
@@ -105,7 +107,7 @@ def submit(day: int, level: int, answer: str) -> None:
         print("VERDICT : OK !")
 
 
-def ints(line: str) -> list[int]:
+def ints(line: str, sep: str | None = None) -> list[int]:
     """Convert a string of ints to a list of ints
 
     Parameters
@@ -118,7 +120,7 @@ def ints(line: str) -> list[int]:
     list[int]
         The list of ints
     """
-    return list(map(int, line.split()))
+    return list(map(int, line.split(sep)))
 
 
 def main(day: int, part: int, code: Callable[[str], str | int]):
