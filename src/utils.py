@@ -123,11 +123,11 @@ def ints(line: str, sep: str | None = None) -> list[int]:
     return list(map(int, line.split(sep)))
 
 
-def main(day: int, part: int, code: Callable[[str], str | int]):
+def main(day: int, part: int, code: Callable[[str], str | int], *, offset: int = 0):
     exemple_or_real = int(input("Exemple (0) ou Réel (1) ? "))
 
     if exemple_or_real == 0:
-        s = get_example(day).strip()
+        s = get_example(day, offset).strip()
     else:
         s = get_input(day).strip()
 
