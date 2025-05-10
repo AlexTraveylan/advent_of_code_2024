@@ -1,6 +1,3 @@
-from src.utils import main
-
-
 def find_three_entries_product(expense_report, target=2020):
     """
     Find three entries in the expense report that sum to the target value and return their product.
@@ -15,9 +12,7 @@ def find_three_entries_product(expense_report, target=2020):
         left = i + 1
         right = n - 1
         while left < right:
-            current_sum = (
-                expense_report[i] + expense_report[left] + expense_report[right]
-            )
+            current_sum = expense_report[i] + expense_report[left] + expense_report[right]
             if current_sum == target:
                 return expense_report[i] * expense_report[left] * expense_report[right]
             elif current_sum < target:
@@ -26,15 +21,8 @@ def find_three_entries_product(expense_report, target=2020):
                 right -= 1
     return None
 
-
-def code(s: str):
-    # Your code here
-
-    entries = s.splitlines()
-    entries = [int(entry) for entry in entries]
-
-    return find_three_entries_product(entries)
-
-
+# Example usage:
 if __name__ == "__main__":
-    main(day=1, part=2, code=code)
+    example_expense_report = [1721, 979, 366, 299, 675, 1456]
+    product = find_three_entries_product(example_expense_report)
+    print(product)  # Output should be 241861950
