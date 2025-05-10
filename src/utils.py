@@ -5,19 +5,16 @@ Author: Alex Traveylan
 Date: 2024-12-01
 """
 
-import os
 import time
 from collections.abc import Callable
 from functools import partial
 
 import requests
-from dotenv import load_dotenv
+from bs4 import BeautifulSoup
 
-load_dotenv()
+from src.settings import Settings
 
-AOC_COOKIE = os.getenv("AOC_COOKIE")
-
-YEAR = "2024"
+settings = Settings()
 
 
 def get_input(day: int) -> str:
@@ -34,8 +31,8 @@ def get_input(day: int) -> str:
         The input as a string
     """
     req = requests.get(
-        f"https://adventofcode.com/{YEAR}/day/{day}/input",
-        headers={"cookie": "session=" + AOC_COOKIE},
+        f"https://adventofcode.com/{settings.year}/day/{day}/input",
+        headers={"cookie": "session=" + settings.aoc_cookie},
         timeout=5,
     )
     return req.text
@@ -57,8 +54,8 @@ def get_example(day: int, offset=0) -> str:
         The input as a string
     """
     req = requests.get(
-        f"https://adventofcode.com/{YEAR}/day/{day}",
-        headers={"cookie": "session=" + AOC_COOKIE},
+        f"https://adventofcode.com/{settings.year}/day/{day}",
+        headers={"cookie": "session=" + settings.aoc_cookie},
         timeout=5,
     )
     blocks = req.text.split("<pre><code>")
@@ -80,15 +77,15 @@ def submit(day: int, level: int, answer: str) -> None:
     """
 
     text = "Envoi de la réponse suivante :\n"
-    text += f"{'>' *5} {answer} {'<' *5}\n"
+    text += f"{'>' * 5} {answer} {'<' * 5}\n"
     text += "Press enter to continue or Ctrl+C to abort."
     input(text)
 
     data = {"level": str(level), "answer": str(answer)}
 
     response = requests.post(
-        f"https://adventofcode.com/{YEAR}/day/{day}/answer",
-        headers={"cookie": "session=" + AOC_COOKIE},
+        f"https://adventofcode.com/{settings.year}/day/{day}/answer",
+        headers={"cookie": "session=" + settings.aoc_cookie},
         data=data,
         timeout=5,
     )
@@ -121,6 +118,34 @@ def ints(line: str, sep: str | None = None) -> list[int]:
         The list of ints
     """
     return list(map(int, line.split(sep)))
+
+
+def extract_statement(day: int, part: int) -> str:
+    """Extrait le contenu HTML de l'énoncé d'un puzzle
+
+    Parameters
+    ----------
+    day : int
+        Le jour du puzzle
+    part : int
+        La partie du puzzle (1 ou 2)
+
+    Returns
+    -------
+    str
+        Le contenu HTML de l'énoncé
+    """
+    req = requests.get(
+        f"https://adventofcode.com/{settings.year}/day/{day}",
+        headers={"cookie": "session=" + settings.aoc_cookie},
+        timeout=5,
+    )
+
+    soup = BeautifulSoup(req.text, "html.parser")
+    main = soup.find("main")
+    articles = main.find_all("article")
+
+    return str(articles[part - 1])
 
 
 def main(day: int, part: int, code: Callable[[str], str | int], *, offset: int = 0):
