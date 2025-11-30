@@ -1,0 +1,34 @@
+---
+alwaysApply: true
+description: This is instructions for answering the Advent of Code puzzles and submitting the answers.
+---
+
+# Advent of Code
+
+This is instructions for answering the Advent of Code puzzles and submitting the answers.
+
+## How to read the puzzle statement
+
+use src.utils.extract_statement to get the puzzle statement.
+
+## How to read the example input
+
+use src.utils.get_example to get the example input.
+
+**Note:** It could be offset sometimes if multiples codes session in html.
+
+## How to submit the answer
+
+Create a folder src/<year>/day_<day> and paste src/template/part_1.py and src/template/part_2.py from /template folder.
+
+Parameter 's' is the input of the puzzle.
+Write your code in the code function that return the answer.
+
+Execute the file with uv run src/<year>/day_<day>/part_<part>.py
+
+You have to have a good response at part 1 for answering part 2.
+Check the print output to get the status of the submission.
+
+**Note:** If response is not OK, try to use main function with example_or_real=ExampleOrReal.EXAMPLE.
+
+**Note 2:** In exemple mode, you may have to adjust the offset parameter (Depending on the number of example session in html).
