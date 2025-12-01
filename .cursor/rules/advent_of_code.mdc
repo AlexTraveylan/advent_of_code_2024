@@ -11,6 +11,8 @@ This is instructions for answering the Advent of Code puzzles and submitting the
 
 use src.utils.extract_statement to get the puzzle statement.
 
+**Note:** Don't try to read the part 2 statement until you have answered well the part 1.
+
 ## How to read the example input
 
 use src.utils.get_example to get the example input.
