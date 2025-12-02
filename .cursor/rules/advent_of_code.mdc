@@ -38,3 +38,8 @@ Check the print output to get the status of the submission.
 ## PYTHONPATH
 
 Add PYTHONPATH=/home/tdemares/dev_folder/advent_of_code_2024 to your run commands.
+
+## Performance
+
+Consider the performance of the code.
+Traitements could be long, you can use numpy or networkx to improve the performance.
