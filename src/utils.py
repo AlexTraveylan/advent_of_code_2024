@@ -7,8 +7,8 @@ Date: 2024-12-01
 
 import time
 from collections.abc import Callable
-from functools import partial
 from enum import StrEnum
+from functools import partial
 
 import requests
 from bs4 import BeautifulSoup
@@ -179,6 +179,7 @@ def main(
 
     # Your code here
     ans = partial(code, s)()
+    print(f"Answer: {ans}")
 
     # fin du code
     end_time = time.perf_counter()
@@ -187,5 +188,3 @@ def main(
     if example_or_real == ExampleOrReal.REAL:
         response_status = submit(day, part, ans)
         print(response_status)
-    else:
-        print(ans)
