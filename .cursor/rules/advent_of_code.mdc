@@ -12,7 +12,6 @@ This is instructions for answering the Advent of Code puzzles and submitting the
 Create a folder src/<year>/day_<day> and paste from /template folder:
 - src/template/part_1.py
 - src/template/part_2.py
-- src/template/statement.py
 
 ## How to read the puzzle statement
 
@@ -22,8 +21,6 @@ use src.utils.extract_statement to get the puzzle statement or execute src/templ
 ```bash
 uv run src/template/statement.py 6 1  # day 6 and part 1
 ```
-
-**Note:** Don't try to read the part 2 statement until you have answered well the part 1.
 
 ## How to submit the answer
 
@@ -35,9 +32,11 @@ Execute the file with uv run src/<year>/day_<day>/part_<part>.py
 You have to have a good response at part 1 for answering part 2.
 Check the print output to get the status of the submission.
 
-**Note:** If response is not OK, try to use main function with example_or_real=ExampleOrReal.EXAMPLE.
+**Note:** Don't try to read the part 2 statement until you have answered well the part 1.
 
-**Note 2:** In exemple mode, you may have to adjust the offset parameter (Depending on the number of example session in html).
+**Note 2:** If response is not OK, try to use main function with example_or_real=ExampleOrReal.EXAMPLE.
+
+**Note 3:** In exemple mode, you may have to adjust the offset parameter (Depending on the number of example session in html).
 
 ## Performance
 
