@@ -1,4 +1,14 @@
+import os
+import sys
+
 import numpy as np
+
+sys.path.insert(
+    0,
+    os.path.abspath(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+    ),
+)
 
 from src.utils import ExampleOrReal, main
 
@@ -25,4 +35,4 @@ def code(s: str):
 
 
 if __name__ == "__main__":
-    main(day=DAY, part=1, code=code, offset=1, example_or_real=ExampleOrReal.REAL)
+    main(day=DAY, part=1, code=code, offset=1, example_or_real=ExampleOrReal.EXAMPLE)

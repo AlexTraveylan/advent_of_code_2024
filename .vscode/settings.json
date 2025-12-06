@@ -17,8 +17,8 @@
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "editor.rulers": [
-    88,
-    90
+    118,
+    120
   ],
   "files.exclude": {
     "**/__pycache__": true,

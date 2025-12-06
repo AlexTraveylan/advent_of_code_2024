@@ -35,10 +35,6 @@ Check the print output to get the status of the submission.
 
 **Note 2:** In exemple mode, you may have to adjust the offset parameter (Depending on the number of example session in html).
 
-## PYTHONPATH
-
-Add PYTHONPATH=/home/tdemares/dev_folder/advent_of_code_2024 to your run commands.
-
 ## Performance
 
 Consider the performance of the code.
