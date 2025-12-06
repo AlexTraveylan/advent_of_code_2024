@@ -7,21 +7,25 @@ description: This is instructions for answering the Advent of Code puzzles and s
 
 This is instructions for answering the Advent of Code puzzles and submitting the answers.
 
+## How to create the folder structure
+
+Create a folder src/<year>/day_<day> and paste from /template folder:
+- src/template/part_1.py
+- src/template/part_2.py
+- src/template/statement.py
+
 ## How to read the puzzle statement
 
-use src.utils.extract_statement to get the puzzle statement.
+use src.utils.extract_statement to get the puzzle statement or execute src/template/statement.py with the day and part as arguments.
+
+**Example:**
+```bash
+uv run src/template/statement.py 6 1  # day 6 and part 1
+```
 
 **Note:** Don't try to read the part 2 statement until you have answered well the part 1.
 
-## How to read the example input
-
-use src.utils.get_example to get the example input.
-
-**Note:** It could be offset sometimes if multiples codes session in html.
-
 ## How to submit the answer
-
-Create a folder src/<year>/day_<day> and paste src/template/part_1.py and src/template/part_2.py from /template folder.
 
 Parameter 's' is the input of the puzzle.
 Write your code in the code function that return the answer.
