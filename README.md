@@ -1,8 +1,8 @@
-# Advent of Code 2024
+# Advent of Code
 
 ## Description
 
-This repository contains my solutions for the Advent of Code 2024.
+This repository contains my solutions for the Advent of Code.
 
 ## uv
 
@@ -18,9 +18,6 @@ Maybe you need to restart your computer after the installation.
 ## Installation
 
 ```bash
-# windows
-uv venv
-.venv\Script\activate
 uv sync
 ```
 
@@ -39,4 +36,3 @@ Copy cookie value from your browser (F12) and paste it in the `.env` file.
 
 - Set the PYTHONPATH to the root of the project: `export PYTHONPATH=$(pwd)` (Not needed if you use my .vscode settings on VSCode or cursor)
 - Use `from src.utils import main` in your file and run the code for a given day and part and your `code` function.
-- Look `src/first.py` for an example.
