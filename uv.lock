@@ -3,7 +3,7 @@ revision = 3
 requires-python = ">=3.13"
 
 [[package]]
-name = "advent-of-code-2024"
+name = "advent-of-code"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
