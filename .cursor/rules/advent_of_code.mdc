@@ -27,7 +27,7 @@ uv run src/template/statement.py 6 1  # day 6 and part 1
 Parameter 's' is the input of the puzzle.
 Write your code in the code function that return the answer.
 
-Execute the file with uv run src/<year>/day_<day>/part_<part>.py
+Execute the file with `timeout 30 uv run src/<year>/day_<day>/part_<part>.py`
 
 You have to have a good response at part 1 for answering part 2.
 Check the print output to get the status of the submission.
